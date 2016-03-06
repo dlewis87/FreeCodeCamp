@@ -1,0 +1,26 @@
+function fearNotLetter(str) {
+  //Find char of first letter
+  var firstLetter = str.charCodeAt(0);  
+  //Find char of last letter
+  var lastLetter = str.charCodeAt(str.length - 1);
+  
+  var re = new RegExp("regex","g");
+  
+  
+  var correct = "";  
+  //Create list of correct sequence of letters  
+   for(var i = firstLetter; i <= lastLetter; i++){
+      correct += String.fromCharCode(i);      
+   }  
+    
+  //Return missing letter that does not match letter in same postion of original string
+  for(var j = 0; j < correct.length; j++){
+      if(correct.substring(j,j+1) !== str.substring(j,j+1)){
+        return correct.substring(j,j+1);
+      }     
+   }
+    
+  
+}
+
+fearNotLetter('abce');
