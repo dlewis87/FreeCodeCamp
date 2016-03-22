@@ -1,0 +1,16 @@
+#grid {
+  background-color: black; 
+  width: 480px;
+}
+
+#grid .row{
+  height: 150px;
+}
+
+#grid .row .col-xs-4{
+  height: 100%;
+  border: 1px solid yellow;
+  text-align: center;
+  font-size: 100px;
+}
+
