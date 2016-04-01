@@ -1,0 +1,50 @@
+.btn {
+  min-width: 70px;
+  min-height: 70px;
+}
+
+.btn:focus {
+  outline: none;
+}
+
+.btn:hover {
+  color: inherit;
+}
+
+.green {
+  background-color: green;
+}
+
+.green:active,
+.greenActive {
+  background-color: rgba(0, 255, 0, 0.4);
+}
+
+.red {
+  background-color: red;
+}
+
+.red:active,
+.redActive {
+  background-color: rgb(255, 46, 150);
+}
+
+.yellow {
+  background-color: yellow;
+}
+
+.yellow:active,
+.yellowActive {
+  background-color: rgba(202, 255, 0, 0.51);
+}
+
+.blue {
+  background-color: blue;
+  color: white;
+}
+
+.blue:active,
+.blueActive {
+  background-color: #00F1FF;
+  color: black;
+}
