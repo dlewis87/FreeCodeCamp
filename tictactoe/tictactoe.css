@@ -1,16 +1,73 @@
-#grid {
-  background-color: black; 
-  width: 480px;
+body {
+  background-color: #c2dde6;
+  color: #431c5d;
+  font-family: 'Passion One', cursive;
 }
 
-#grid .row{
-  height: 150px;
+h1{
+  font-size: 60px;
 }
 
-#grid .row .col-xs-4{
+
+.board{    
+  position: fixed;
+  width: 500px;
+  height: 510px;
+  top: 50%;
+  left: 50%;
+  margin-top: -185px; 
+  margin-left: -250px;    
+  font-size: 125px;
+  box-shadow: 20px 20px 20px #000;
+}
+
+.board .row{
+  height: 170px;
+  margin: 0;
+}
+
+.board .row .col-xs-4{
   height: 100%;
-  border: 1px solid yellow;
+  border: 1px solid grey;
   text-align: center;
-  font-size: 100px;
+  /*background-image: url('http://previews.123rf.com/images/likstudio/likstudio1109/likstudio110900068/10537888-Natural-stone-texture-with-different-colors-Stock-Photo-background.jpg');*/
+  background-color: white;
+  
 }
+
+.controls {
+  position: fixed;
+  width: 500px;
+  height: 60px;
+  top: 50%;
+  left: 50%;
+  margin-top: -238px; 
+  margin-left: -250px;   
+}
+
+#message{    
+  font-size: 40px;
+}
+
+.btn{
+  border-radius: 0;
+  background-color: #cdd422;
+  font-size: 25px;
+}
+
+#selectPlayer .btn{
+  font-size: 190px;
+  width: 49.3%;
+  height: 255px;
+}
+
+#selectPlayer .btn:focus{
+  outline:0px;
+}
+
+.modal-title{
+  font-size: 80px;
+}
+
+
 
