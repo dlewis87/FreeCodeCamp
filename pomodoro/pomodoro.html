@@ -1,23 +1,50 @@
-<div class="container">
+<h1 class="text-center">Pomodoro Timer</h1>
+<hr>
+<div class="pomodoro">
+  <div class="row">
+    <div class="col-xs-6 text-center">Timer Length</div>
+    <div class="col-xs-6 text-center">Break Length</div>
+  </div>
+  <div class="row">
+    <div class="col-xs-6 text-center">
+      <span id="adjustTime">    
+        <button class="adjust" id="plus"><i class="fa fa-plus-square "></i></button>
+        <span id="timerLength">25</span>
+      <button class="adjust" id="minus"><i class="fa fa-minus-square "></i></button>
+      </span>
+    </div>
+    <div class="col-xs-6 text-center">
+      <span id="adjustPom">    
+        <button class="adjust" id="pomplus"><i class="fa fa-plus-square "></i></button>
+        <span id="pomLength">5</span>
+      <button class="adjust" id="pomminus"><i class="fa fa-minus-square "></i></button>
+      </span>
+    </div>
+  </div>
+  <hr>
   <div class="row">
     <div class="col-xs-12">
-      <h1 class="text-center">Pomodoro Timer</h1>
-      <hr>
-      
-      <div class="well text-center" id="timer"></div>
-      <button class="btn btn-default" id="plus">+</button>      
-      <button class="btn btn-default" id="minus">-</button>
-      <hr>
-      <div class="well text-center" id="break"></div>
-      <button class="btn btn-default" id="pomplus">+</button>      
-      <button class="btn btn-default" id="pomminus">-</button>
-      <hr>
-      <button class="btn btn-default" id="start">Start</button>
-      <button class="btn btn-default" id="stop">Stop</button>
-      <button class="btn btn-default" id="reset">Reset</button>
-      
-      
-      
+      <div class="text-center center-block" id="timer"></div>
+    </div>
+  </div>
+  <hr>
+  <div class="progress">
+    <div class="progress-bar progress-bar-danger progress-bar-striped active" style="width: 0%">
+      <span class="sr-only"></span>
+    </div>
+    <div class="progress-bar progress-bar-success" style="width: 0%">
+      <span class="sr-only"></span>
+    </div>
+    <div class="progress-bar progress-bar-warning" style="width: 0%">
+      <span class="sr-only"></span>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">     
+      <button class="btn btn-default" id="start"><i class="fa fa-play-circle fa-2x"></i></button>
+      <button class="btn btn-default" id="stop"><i class="fa fa-stop-circle fa-2x"></i></button>
+      <button class="btn btn-default" id="reset"><i class="fa fa-step-backward fa-2x"></i></button>
     </div>
   </div>
 </div>
+
