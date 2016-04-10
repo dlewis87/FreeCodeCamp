@@ -1,90 +1,128 @@
 $(document).ready(function() {
-  
-  var time = 1500;
-  var initTime = time;
-  setTimer(time);
-  var pomodoro = 300;
-  var initPomo = pomodoro;
-  setPomodoro(pomodoro);
+
+  var time, pomodoro, timeLength, pomLength, progressTotal;
+  reset();
+ 
+
+  $('#reset').click(function() {
+    reset();
+    setTimer(timeLength * 60);    
+  });
+
+  function reset() {
+    timeLength = getTimerLength();     
+    pomLength = getPomLength();  
+    time = timeLength * 60;
+    pomodoro = pomLength * 60;
+    progressTotal = (Number(timeLength) + Number(pomLength)) * 60;
+    setProgress();
+  }
+
+  function getTimerLength() {
+    return $('#timerLength').text();
+  }
+
+  function getPomLength() {
+    return $('#pomLength').text();
+  }
+
+  function setTimer(time) {
+    $('#timer').text(formatTime(time));
+  }
+
+  function formatTime(time) {
+    var minutes = Math.floor(time / 60);
+    var seconds = time % 60;
+    return minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
+  }
   
 
-  $('#start').click(function() {
-    runTimer();    
+  $('#plus').click(function() {  
+    timeLength = Number(timeLength) + 1;
+    setTimeLength(timeLength);
   });
   
-  function runTimer(){
-    initTime = time;
-    initPomo = pomodoro;
+  
+  $('#minus').click(function() {
+    if (timeLength > 1) timeLength = Number(timeLength) - 1;
+    setTimeLength(timeLength);
+  });
+  
+  
+  function setTimeLength(time) {            
+    $('#timerLength').text(time);
+    reset();
+  }
+  
+  
+  $('#pomplus').click(function() {
+    pomLength = Number(pomLength) + 1;
+    setPomLength(pomLength);
+  });
+
+  $('#pomminus').click(function() {
+    if (pomLength > 1) pomLength = Number(pomLength) - 1;
+    setPomLength(pomLength);
+  });
+
+  function setPomLength(time) {
+    $('#pomLength').text(time);
+    reset();
+  }  
+  
+  $('#start').click(function() {
+    runTimer();    
+    $(this).attr("disabled", true);
+  });
+  
+  
+  
+  function runTimer(){    
     setTimer(time);
+   
 
     var timer = setInterval(function(){ 
+      setProgress();
       if(time > 0) {
         time -= 1; 
         setTimer(time);   
       } 
       else if(time === 0 && pomodoro > 0) {
         pomodoro -= 1;
-        setPomodoro(pomodoro);
+        setTimer(pomodoro);
       } 
       else if(time === 0 && pomodoro === 0){
         reset();
       }         
-    }, 1000);
+    }, 1000);  
     
-    var pomoTimer = setInterval(function(){ 
-          
-    }, 1000);
     
     $('#stop').click(function() {
       clearInterval(timer);
-      clearInterval(pomoTimer);
+      $('#start').attr("disabled", false);
     });
   }
   
-  $('#reset').click(function(){
-    reset();
-  });
-
-  function reset(){    
-    time = initTime;
-    pomodoro = initPomo;
-    setTimer(time);
-    setPomodoro(pomodoro);
+  function setProgress(){
+    
+    var elapsedTime = (Number(timeLength) * 60) - Number(time);
+    var elapsedPom = (Number(pomLength) * 60) - Number(pomodoro);
+    var elapsedTotal = elapsedTime + elapsedPom;
+    
+    var timePercent = (((Number(timeLength) * 60) - Number(elapsedTime)) / progressTotal) * 100;
+    var pomPercent = (((Number(pomLength) * 60) - Number(elapsedPom)) / progressTotal) * 100;
+    
+    
+    var elapsedPercent = (100 - timePercent - pomPercent);
+    $('.progress-bar-danger').css('width', elapsedPercent + '%');
+    $('.progress-bar-success').css('width', timePercent + '%');
+    $('.progress-bar-warning').css('width', pomPercent + '%');
+    
+    
   }
   
-
-  $('#plus').click(function() {
-    time += 60;
-    setTimer(time);
-  });
-
-  $('#minus').click(function() {
-    if (time > 60) time -= 60;
-    setTimer(time);
-  });
   
-  $('#pomplus').click(function() {
-    pomodoro += 60;
-    setPomodoro(pomodoro);
-  });
-
-  $('#pomminus').click(function() {
-    if (pomodoro > 60) pomodoro -= 60;
-    setPomodoro(pomodoro);
-  });
-
-  function setTimer(time) {
-    $('#timer').text(formatTime(time));
-  }
   
-  function setPomodoro(time) {
-    $('#break').text(formatTime(time));
-  }
-  
-  function formatTime(time){
-    var minutes = Math.floor(time / 60);
-    var seconds = time % 60;
-    return minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
-  }
+
 
 });
