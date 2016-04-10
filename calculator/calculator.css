@@ -1,0 +1,41 @@
+body{
+  font-family: 'Noto Serif', serif;
+  background-color: #ede9ce;
+  color: #64706c;
+}
+
+
+
+
+.calculator {
+  position: fixed;
+  width: 270px;
+  height: 300px;
+  top: 50%;
+  left: 50%;
+  margin-top: -150px; 
+  margin-left: -135px; 
+  background-color: #935347;
+  padding: 10px;
+  padding-left: 17px;
+  padding-top: 20px;
+  box-shadow: 10px 10px 10px #000;
+}
+
+.btn {
+  width: 50px;
+  min-height: 35px;
+  border-radius: 0px;
+  margin: 3px;
+  box-shadow: 5px 5px 2px #000;
+  background-color: #c7ad88;
+}
+
+#screen {
+  height: 40px;
+  padding: 10px;  
+  border-radius: 0px;
+  width: 240px;
+  background-color: #000;
+  margin-bottom: 10px;
+}
