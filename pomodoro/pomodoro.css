@@ -1,0 +1,60 @@
+body {
+  background-color: #dddfd4;
+  color: #173e43;
+  font-family: 'Poiret One', cursive;
+}
+
+button:focus{
+  outline: 0;
+}
+
+.pomodoro {  
+  background-color: #3fb0ac;
+  position: fixed;
+  width: 500px;
+  height: 350px;
+  top: 50%;
+  left: 50%;
+  margin-top: -235px; 
+  margin-left: -250px;   
+  padding: 10px;
+  padding-left: 17px;
+  padding-top: 20px;  
+  font-size: 30px;
+}
+
+
+.adjust{
+  color: #fae596; 
+  background-color: rgba(255,255,255,0);
+  border: 0;
+}
+
+#timer{  
+  background-color: #fae596;
+  border-radius: 15px;  
+  width: 150px;
+  height: 45px;  
+}
+
+.btn{
+  background-color: #fae596;
+  border-color: rgba(204, 204, 204, 0);
+}
+
+.btn:active {
+  background-color: #fae596;  
+  border-color: rgba(204, 204, 204, 0);
+  outline: 0;
+}
+
+.btn:focus {
+  background-color: #fae596;  
+  border-color: rgba(204, 204, 204, 0);
+  outline: 0;
+}
+
+.btn:hover {
+  background-color: #fae596;  
+  border-color: rgba(204, 204, 204, 0);
+}
