@@ -1,3 +1,5 @@
+//To do decimal point, remove 'Ans' & 'Percent'
+
 $(document).ready(function() {
   var buttons = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
   var operatorNames = ['plus', 'minus', 'divide', 'multiply'];
@@ -37,6 +39,18 @@ $(document).ready(function() {
       lastButton = "num";
     });
   }
+  
+  $('#point').click(function() {
+      //If start of new calculation clear screen
+      if (newSum) {
+        ClearScreen();
+      }
+      //Add button value to screen
+      $('#screen').append('.');
+      newSum = false;
+      //Set last button to number
+      lastButton = "num";
+    });
 
   //Make operator button
   function MakeOpButton(val) {
