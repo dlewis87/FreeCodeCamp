@@ -40,9 +40,9 @@ $(document).ready(function() {
     freeSquares = squares;
     squares.map(function(position) {
       $("#" + position).text("");
-      $('#' + position).css("background-color", "black");
+      $('#' + position).css("background-color", "#bccbde");
     });
-    $('#grid').css("background-color", "black");
+    $('#grid').css("background-color", "#bccbde");
     $('#selectPlayer').modal();
   }
 
@@ -93,7 +93,13 @@ $(document).ready(function() {
   //Store selected turn in object and display in html
   function storeTurn(position) {
     board[position] = currentTurn;
-    $("#" + position).text(currentTurn);
+    console.log(currentTurn);
+    $("#" + position).html(piece());
+  }
+  
+  function piece(){
+    if(currentTurn === 'X') return '<i class="fa fa-times"></i>';
+    else if(currentTurn === 'O') return '<i class="fa fa-circle-o"></i>';
   }
 
   //Remove position from free squares
@@ -179,7 +185,7 @@ $(document).ready(function() {
   //If winner, show winning line and display message
   function showWinner(line) {
     for (var i in lines[line]) {
-      $('#' + lines[line][i]).css("background-color", "yellow");
+      $('#' + lines[line][i]).css("background-color", "#cdd422");
       winner = true;
       $('#message').text("The winner is " + currentTurn);
     }
