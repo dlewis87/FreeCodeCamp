@@ -12,7 +12,7 @@ $(document).ready(function() {
   function game() {
     $("#level").text("Level : " + level);
     console.log(compSequence);
-    if (level <= 3) {
+    if (level <= 20) {
       if (currentTurn === 'computer') {
         disableButtons();
         runSequence();
@@ -111,8 +111,7 @@ $(document).ready(function() {
     userSequence = [];
     currentTurn = 'computer';
     strict = false;
-    $('#strict').removeClass('btn-danger');
-    $('#strict').addClass('btn-default');
+    $('#strict').removeClass('strict');   
     disableButtons();
     newButton();
     game();
@@ -125,12 +124,10 @@ $(document).ready(function() {
   $('#strict').click(function() {
     if (strict) {
       strict = false;
-      $(this).removeClass('btn-danger');
-      $(this).addClass('');
+      $(this).removeClass('strict');
     } else {
-      strict = true;
-      $(this).removeClass('btn-default');
-      $(this).addClass('btn-danger');
+      strict = true;      
+      $(this).addClass('strict');
     }
   });
 
