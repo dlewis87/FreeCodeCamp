@@ -1,18 +1,81 @@
-.btn {
-  min-width: 70px;
-  min-height: 70px;
+body {
+  background-color: #c7a693;
+  color: #dbc3d0;
+  font-family: 'Atomic Age', cursive;
 }
 
-.btn:focus {
-  outline: none;
+h1 {
+  font-size: 60px;
 }
 
-.btn:hover {
-  color: inherit;
+.game {
+  position: fixed;
+  width: 500px;
+  height: 500px;
+  top: 50%;
+  left: 50%;
+  margin-top: -250px;
+  margin-left: -250px;
+  background-color: #5e0231;
+  padding: 10px;
+  padding-left: 17px;
+  padding-top: 20px;
+  /*box-shadow: 10px 10px 10px #000;  */
 }
+
+.board {
+  background-color: #dbc3d0;
+  position: fixed;
+  width: 180px;
+  height: 180px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.controls {
+   transform: translate(0%, 160%); 
+   height: 150px;
+}
+
+.output{
+  transform: translate(29%, 0%);
+  font-size: 20px;
+}
+
+.buttons {
+  transform: translate(0%, 30%);
+  height: 100px;
+  
+}
+
+#reset{
+  transform: translate(570%, 0%);  
+}
+
+
+.tile {
+  width: 70px;
+  height: 70px;
+  position: fixed;
+  border-color: rgba(204, 204, 204, 0);
+}
+
+.buttons > .tile{
+  border-radius: 100%;  
+  color: #5e0231;
+}
+
+
+.tile:focus, .tile:active, .tile:hover {
+  outline: 0;
+  border-color: rgba(204, 204, 204, 0);
+}
+
 
 .green {
   background-color: green;
+  transform: translate(30%, 33%);
 }
 
 .green:active,
@@ -22,6 +85,7 @@
 
 .red {
   background-color: red;
+  transform: translate(130%, 33%);
 }
 
 .red:active,
@@ -31,16 +95,17 @@
 
 .yellow {
   background-color: yellow;
+  transform: translate(130%, 133%);
 }
 
 .yellow:active,
 .yellowActive {
-  background-color: rgba(202, 255, 0, 0.51);
+  background-color: #47CF73;
 }
 
 .blue {
   background-color: blue;
-  color: white;
+  transform: translate(30%, 133%);
 }
 
 .blue:active,
@@ -48,3 +113,9 @@
   background-color: #00F1FF;
   color: black;
 }
+
+.strict, .strict:active, .strict:focus, .strict:hover{
+  background-color: #E67715;
+}
+
+
