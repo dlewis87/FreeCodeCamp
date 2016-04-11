@@ -2,8 +2,7 @@ body{
   background-color: #e1e8f0;
 }
 
-h1 {
-  
+h1 {  
   color: #9068be;
   padding: 15px;
   
@@ -13,7 +12,12 @@ img {
   width: 45px;
 }
 
-table {
+#table {
+  padding: 0;
+ 
+}
+
+.table{
   box-shadow: 10px 10px 5px #000;
 }
 
