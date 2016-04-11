@@ -9,19 +9,28 @@ h1{
 }
 
 
-.board{    
+.game{    
   position: fixed;
   width: 500px;
-  height: 510px;
+  height: 700px;
   top: 50%;
   left: 50%;
-  margin-top: -185px; 
-  margin-left: -250px;    
+  margin-top: -350px; 
+  margin-left: -250px;  
+}
+
+.controls {
+   transform: translate(0%, 10%);
+}
+
+.board{
   font-size: 125px;
+  transform: translate(0%, 5%);
   box-shadow: 20px 20px 20px #000;
 }
 
-.board .row{
+
+.board > .row{
   height: 170px;
   margin: 0;
 }
@@ -35,15 +44,7 @@ h1{
   
 }
 
-.controls {
-  position: fixed;
-  width: 500px;
-  height: 60px;
-  top: 50%;
-  left: 50%;
-  margin-top: -238px; 
-  margin-left: -250px;   
-}
+
 
 #message{    
   font-size: 40px;
@@ -68,6 +69,5 @@ h1{
 .modal-title{
   font-size: 80px;
 }
-
 
 
