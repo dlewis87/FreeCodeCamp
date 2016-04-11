@@ -12,10 +12,10 @@ button:focus{
   background-color: #3fb0ac;
   position: fixed;
   width: 500px;
-  height: 350px;
+  height: 450px;
   top: 50%;
   left: 50%;
-  margin-top: -235px; 
+  margin-top: -250px; 
   margin-left: -250px;   
   padding: 10px;
   padding-left: 17px;
