@@ -6,6 +6,8 @@ $(document).ready(function() {
   var board = {};
   var squares = {};
   var freeSquares = [];
+  
+  $('#selectPlayer').modal({backdrop: 'static', keyboard: false})  
 
   var lines = {
     'topRow': ['top-left', 'top-center', 'top-right'],
@@ -66,6 +68,7 @@ $(document).ready(function() {
   //Set click function that activates user turn
   squares.map(function(position) {
     $("#" + position).click(function() {
+      if(computer === "" | user === "") reset();
       if (!winner) {
         //If board position clicked is empty
         
@@ -109,6 +112,7 @@ $(document).ready(function() {
 
   //Take computer turn
   function computerTurn() {
+    if(computer === "") reset();
     currentTurn = computer;
     var move = '';
     //Find winning move
